@@ -2,3 +2,9 @@
   <h1>Here are some great organizations that need your help.</h1>
   <p>Donate today!</p>
 </div>
+
+<div *ngIf="organizationList | async as organizationList">
+  <app-organization-item class="organization-item"
+                         *ngFor="let organization of organizationList"
+                         [organization]="organization"></app-organization-item>
+</div>

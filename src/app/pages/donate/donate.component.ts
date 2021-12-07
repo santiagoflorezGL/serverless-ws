@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrganizationListService } from 'src/app/services/organization-list.service';
 
 @Component({
   selector: 'app-donate',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonateComponent implements OnInit {
 
-  constructor() { }
+  organizationList = this.organizationListService.getOrganizationList();
 
-  ngOnInit(): void {
+  constructor(private organizationListService: OrganizationListService) { }
+
+  ngOnInit() {
   }
 
 }
